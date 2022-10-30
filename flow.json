@@ -1,1 +1,319 @@
-[]
+[
+    {
+        "id": "3ae4b9376d85c4eb",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "622cf1a356fd19f1",
+        "type": "mqtt-broker",
+        "name": "Localhost",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "0e4ec371689be83c",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "712b977e76a0728f",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "b9f2a2bcf3345b4f",
+        "type": "ui_group",
+        "name": "Battery",
+        "tab": "0e4ec371689be83c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9364276126bf08d6",
+        "type": "ui_group",
+        "name": "Alarms",
+        "tab": "0e4ec371689be83c",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8b41ead2ecbec54e",
+        "type": "mqtt in",
+        "z": "3ae4b9376d85c4eb",
+        "name": "",
+        "topic": "agv0/alarms",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "622cf1a356fd19f1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 180,
+        "wires": [
+            [
+                "f932c728400436a6"
+            ]
+        ]
+    },
+    {
+        "id": "0a3ab8df98243472",
+        "type": "mqtt in",
+        "z": "3ae4b9376d85c4eb",
+        "name": "",
+        "topic": "agv0/battery/#",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "622cf1a356fd19f1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 300,
+        "wires": [
+            [
+                "72aa4ee7f03995a7"
+            ]
+        ]
+    },
+    {
+        "id": "72aa4ee7f03995a7",
+        "type": "function",
+        "z": "3ae4b9376d85c4eb",
+        "name": "Battery Data Splitter",
+        "func": "msg.payload = msg.payload.value\n\nif (msg.topic === \"agv0/battery/soc\")\n    return [msg, null];\nif (msg.topic === \"agv0/battery/voltage\")\n    return [null, msg];",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 300,
+        "wires": [
+            [
+                "c9e877ba7cf14734"
+            ],
+            [
+                "bafd4f0f4e6290f8"
+            ]
+        ]
+    },
+    {
+        "id": "c9e877ba7cf14734",
+        "type": "ui_gauge",
+        "z": "3ae4b9376d85c4eb",
+        "name": "",
+        "group": "b9f2a2bcf3345b4f",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "SoC",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#f00000",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "25",
+        "seg2": "50",
+        "className": "",
+        "x": 590,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "bafd4f0f4e6290f8",
+        "type": "ui_gauge",
+        "z": "3ae4b9376d85c4eb",
+        "name": "",
+        "group": "b9f2a2bcf3345b4f",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Voltage",
+        "label": "V",
+        "format": "{{value}}",
+        "min": "9.6",
+        "max": "12.6",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#3fd100"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 600,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "c98dc447554b11ae",
+        "type": "ui_list",
+        "z": "3ae4b9376d85c4eb",
+        "group": "9364276126bf08d6",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "lineType": "one",
+        "actionType": "none",
+        "allowHTML": false,
+        "outputs": 0,
+        "topic": "",
+        "x": 590,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "f932c728400436a6",
+        "type": "function",
+        "z": "3ae4b9376d85c4eb",
+        "name": "Alarm List Generator",
+        "func": "msg.payload = msg.payload.alarmList\n\nif(msg.payload.alarmsActive===false)\n    msg.payload = [\"None\"]\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 180,
+        "wires": [
+            [
+                "c98dc447554b11ae"
+            ]
+        ]
+    }
+]
